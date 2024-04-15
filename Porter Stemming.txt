@@ -1,0 +1,10 @@
+from nltk.stem.porter import *
+import string
+porter = PorterStemmer()
+example_words = ["program","programming","programer","programs","programmed"]
+example_sentence = "Python programmers often tend like programming in python because it's like english. We call people who program in python pythonistas."
+example_sentence_no_punct = example_sentence.translate(str.maketrans("", "", string.punctuation))
+word_tokens = word_tokenize(example_sentence_no_punct)
+print("Words\t\tStem")
+for word in word_tokens:
+    print (word,"\t\t",porter.stem(word))

@@ -1,0 +1,8 @@
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize, word_tokenize
+text = "This is a sample text. It includes multiple sentences and words."
+sentences = sent_tokenize(text)
+print("Sentences:", sentences)
+words = word_tokenize(text)
+print("Words:", words)

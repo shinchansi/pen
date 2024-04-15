@@ -1,0 +1,8 @@
+from gtts import gTTS
+import os
+text = "Welcome to Natural Language Programming"
+language = 'en'
+tts = gTTS(text=text, lang=language, slow=False)
+audio_file = "output.mp3"
+tts.save(audio_file)
+os.system("start " + audio_file)

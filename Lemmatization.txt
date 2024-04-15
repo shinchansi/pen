@@ -1,0 +1,15 @@
+from nltk.stem import WordNetLemmatizer
+nltk.download("wordnet")
+nltk.download("omw-1.4")
+wnl = WordNetLemmatizer()
+example_words = ["program","programming","programer","programs","programmed"]
+print("--Word--\t\t--Lemma--")
+for word in example_words:
+    print (word, "\t\t",wnl.lemmatize(word, pos="v"))
+example_sentence = """Python programmers often tend like programming in python because it's like english. We call people who program in python pythonistas."""
+example_sentence_no_punct = example_sentence.translate(str.maketrans("", "", string.punctuation))
+
+word_tokens = word_tokenize(example_sentence_no_punct)
+print("--Word--\t\t--Lemma--")
+for word in word_tokens:
+    print (word, "\t\t\t",wnl.lemmatize(word, pos="v"))
