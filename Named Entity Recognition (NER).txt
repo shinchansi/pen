@@ -1,5 +1,5 @@
-pip install spacy
 spacy.cli.download("en_core_web_sm")
+pip install spacy
 
 
 import pandas as pd 
