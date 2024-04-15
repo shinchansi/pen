@@ -6,3 +6,27 @@ tts = gTTS(text=text, lang=language, slow=False)
 audio_file = "output.mp3"
 tts.save(audio_file)
 os.system("start " + audio_file)
+
+
+
+
+
+import time
+import pygame
+from gtts import gTTS
+
+def play_sound(file_path):
+    pygame.init()
+    pygame.mixer.init()
+    pygame.mixer.music.load(file_path)
+    pygame.mixer.music.play()
+    while pygame.mixer.music.get_busy():
+        pygame.time.Clock().tick(10)
+
+mytext = "Welcome to Natural Language programming"
+language = "en"
+current_time = time.strftime("%Y%m%d%H%M%S")  # Get current timestamp
+file_name = "myfile_" + current_time + ".mp3"   # Create unique filename
+myobj = gTTS(text=mytext, lang=language, slow=False)
+myobj.save(file_name)
+play_sound(file_name)
